@@ -24,7 +24,13 @@ public class BowlingGame {
 
         for(int frame = 1;frame <= 10;frame++)
         {
-            score += this.rolls.get(roll) + this.rolls.get(roll+1);
+            if(this.rolls.get(roll) + this.rolls.get(roll+1) == 10) {
+                score += 10;
+
+                score += this.rolls.get(roll+2);
+            } else {
+                score += this.rolls.get(roll) + this.rolls.get(roll+1);
+            }
 
             roll += 2;
         }

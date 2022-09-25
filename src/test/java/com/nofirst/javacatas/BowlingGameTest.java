@@ -33,4 +33,26 @@ public class BowlingGameTest {
 
         assertThat(this.bowlingGame.score()).isEqualTo(20);
     }
+
+    /**
+     * 接下来我们要来测试 补中，即 Spare。
+     * 假设我们第一轮完成了 Spare（共计投了两次球），
+     * 然后剩下的掷球回合击倒数分别为 5 和 17 次 0 击倒，
+     * 所以总分为：（10 + 5）+ 5 = 20
+     */
+    @Test
+    public void it_awards_a_roll_bonus_for_every_spare()
+    {
+        this.bowlingGame.roll(2);
+        this.bowlingGame.roll(8); // 补中
+
+        this.bowlingGame.roll(5);
+
+        for(int i=0;i < 17;i++)
+        {
+            this.bowlingGame.roll(0);
+        }
+
+        assertThat(this.bowlingGame.score()).isEqualTo(20);
+    }
 }

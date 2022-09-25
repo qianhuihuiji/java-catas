@@ -11,10 +11,7 @@ public class BowlingGameTest {
     @Test
     public void it_scores_a_gutter_game_as_zero()
     {
-        for(int i=0;i < 20;i++)
-        {
-            this.bowlingGame.roll(0);
-        }
+        rollTimes(20, 0);
 
         assertThat(this.bowlingGame.score()).isEqualTo(0);
     }
@@ -26,10 +23,7 @@ public class BowlingGameTest {
     @Test
     public void it_scores_the_sum_of_all_knocked_down_pins_for_a_game()
     {
-        for(int i=0;i < 20;i++)
-        {
-            this.bowlingGame.roll(1);
-        }
+        rollTimes(20, 1);
 
         assertThat(this.bowlingGame.score()).isEqualTo(20);
     }
@@ -48,11 +42,15 @@ public class BowlingGameTest {
 
         this.bowlingGame.roll(5);
 
-        for(int i=0;i < 17;i++)
-        {
-            this.bowlingGame.roll(0);
-        }
+        rollTimes(17, 0);
 
         assertThat(this.bowlingGame.score()).isEqualTo(20);
+    }
+
+    private void rollTimes(int times, int pints) {
+        for(int i=0;i < times;i++)
+        {
+            this.bowlingGame.roll(pints);
+        }
     }
 }

@@ -7,14 +7,18 @@ public class PrimeFactors {
     public int[] generate(int number) {
         List<Integer> primes = new ArrayList<>();
 
-        while(number % 2 == 0){
-            primes.add(2);
+        int candidate = 2;
 
-            number /= 2;
-        }
+        while(number > 1)
+        {
+            while(number % candidate == 0)
+            {
+                primes.add(candidate);
 
-        if(number > 1){
-            primes.add(number);
+                number /= candidate;
+            }
+
+            candidate++;
         }
 
         return primes.stream().mapToInt(Integer::intValue).toArray();

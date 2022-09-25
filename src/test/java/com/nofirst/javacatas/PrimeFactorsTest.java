@@ -32,4 +32,28 @@ public class PrimeFactorsTest {
     {
         assertThat(this.primeFactors.generate(4)).isEqualTo(new int[]{2,2});
     }
+
+    @Test
+    public void it_returns_5_for_5()
+    {
+        assertThat(this.primeFactors.generate(5)).isEqualTo(new int[]{5});
+    }
+
+    @Test
+    public void it_returns_2_3_for_6()
+    {
+        assertThat(this.primeFactors.generate(6)).isEqualTo(new int[]{2,3});
+    }
+
+    @Test
+    public void it_returns_2_2_2_for_8()
+    {
+        assertThat(this.primeFactors.generate(8)).isEqualTo(new int[]{2,2,2});
+    }
+
+    @Test
+    public void it_returns_3_3_for_9()
+    {
+        assertThat(this.primeFactors.generate(9)).isEqualTo(new int[]{3,3});
+    }
 }

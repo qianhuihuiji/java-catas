@@ -37,14 +37,35 @@ public class BowlingGameTest {
     @Test
     public void it_awards_a_roll_bonus_for_every_spare()
     {
-        this.bowlingGame.roll(2);
-        this.bowlingGame.roll(8); // 补中
+        this.rollSpare(); // 补中
 
         this.bowlingGame.roll(5);
 
         rollTimes(17, 0);
 
         assertThat(this.bowlingGame.score()).isEqualTo(20);
+    }
+
+    /**
+     * 下一个测试：测试 全中，即 Strike
+     */
+    @Test
+    public void it_awards_a_two_roll_bonus_for_every_strike()
+    {
+        this.bowlingGame.roll(10);// 全中
+
+        this.bowlingGame.roll(7);
+        this.bowlingGame.roll(2);
+
+        rollTimes(17, 0);
+
+        assertThat(this.bowlingGame.score()).isEqualTo(28);
+    }
+
+    private void rollSpare()
+    {
+        this.bowlingGame.roll(2);
+        this.bowlingGame.roll(8);
     }
 
     private void rollTimes(int times, int pints) {

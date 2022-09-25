@@ -24,15 +24,16 @@ public class BowlingGame {
 
         for(int frame = 1;frame <= 10;frame++)
         {
-            if(isSpare(roll)) {
-                score += 10;
-
-                score += this.rolls.get(roll+2);
+            if(this.rolls.get(roll) == 10) {
+                score += 10 + this.rolls.get(roll + 1) + this.rolls.get(roll + 2);
+                roll += 1;
+            }else if(isSpare(roll)) {
+                score += 10 + this.rolls.get(roll+2);
+                roll += 2;
             } else {
                 score += getDefaultFrameScore(roll);
+                roll += 2;
             }
-
-            roll += 2;
         }
 
         return score;

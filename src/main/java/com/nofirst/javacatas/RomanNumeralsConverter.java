@@ -5,6 +5,13 @@ public class RomanNumeralsConverter {
     public String convert(int number) {
         StringBuilder solution = new StringBuilder();
 
+        while(number >= 5)
+        {
+            solution.append("V");
+
+            number -= 5;
+        }
+
         while(number >= 4)
         {
             solution.append("IV");

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class BowlingGame {
 
-    private List<Integer> rolls = new ArrayList<>();
+    private final List<Integer> rolls = new ArrayList<>();
 
     /**
      *
@@ -19,6 +19,16 @@ public class BowlingGame {
     }
 
     public int score() {
-        return this.rolls.stream().reduce(Integer::sum).orElse(0);
+        int score = 0;
+        int roll = 0;
+
+        for(int frame = 1;frame <= 10;frame++)
+        {
+            score += this.rolls.get(roll) + this.rolls.get(roll+1);
+
+            roll += 2;
+        }
+
+        return score;
     }
 }

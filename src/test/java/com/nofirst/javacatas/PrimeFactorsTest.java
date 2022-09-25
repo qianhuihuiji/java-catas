@@ -56,4 +56,10 @@ public class PrimeFactorsTest {
     {
         assertThat(this.primeFactors.generate(9)).isEqualTo(new int[]{3,3});
     }
+
+    @Test
+    public void it_returns_2_2_5_5_for_100()
+    {
+        assertThat(this.primeFactors.generate(100)).isEqualTo(new int[]{2,2,5,5});
+    }
 }

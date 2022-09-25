@@ -19,4 +19,11 @@ public class RomanNumeralsConverterTest {
     {
         assertThat(this.romanNumeralsConverter.convert(2)).isEqualTo("II");
     }
+
+    @Test
+    public void it_returns_IV_for_4()
+    {
+        assertThat(this.romanNumeralsConverter.convert(4)).isEqualTo("IV");
+    }
+
 }

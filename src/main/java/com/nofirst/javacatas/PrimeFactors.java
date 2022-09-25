@@ -6,19 +6,14 @@ import java.util.List;
 public class PrimeFactors {
     public int[] generate(int number) {
         List<Integer> primes = new ArrayList<>();
-
         int candidate = 2;
 
-        while(number > 1)
+        for(candidate = 2;number > 1;candidate++)
         {
-            while(number % candidate == 0)
+            for(;number % candidate == 0;number /= candidate)
             {
                 primes.add(candidate);
-
-                number /= candidate;
             }
-
-            candidate++;
         }
 
         return primes.stream().mapToInt(Integer::intValue).toArray();

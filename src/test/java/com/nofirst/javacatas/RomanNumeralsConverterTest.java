@@ -31,4 +31,34 @@ public class RomanNumeralsConverterTest {
     {
         assertThat(this.romanNumeralsConverter.convert(5)).isEqualTo("V");
     }
+
+    @Test
+    public void it_returns_X_for_10()
+    {
+        assertThat(this.romanNumeralsConverter.convert(10)).isEqualTo("X");
+    }
+
+    @Test
+    public void it_returns_XL_for_40()
+    {
+        assertThat(this.romanNumeralsConverter.convert(40)).isEqualTo("XL");
+    }
+
+    @Test
+    public void it_returns_L_for_50()
+    {
+        assertThat(this.romanNumeralsConverter.convert(50)).isEqualTo("L");
+    }
+
+    @Test
+    public void it_returns_XLIV_for_44()
+    {
+        assertThat(this.romanNumeralsConverter.convert(44)).isEqualTo("XLIV");
+    }
+
+    @Test
+    public void it_returns_XLIV_for_49()
+    {
+        assertThat(this.romanNumeralsConverter.convert(44)).isEqualTo("XLIV");
+    }
 }

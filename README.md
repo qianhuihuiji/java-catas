@@ -30,3 +30,9 @@
 
 我们只进行 50 以下的数字转换，其他的规则是类似的。
 
+- 保龄球游戏：BowlingGameTest
+
+规则说明：[保龄球游戏](https://baike.baidu.com/item/%E4%BF%9D%E9%BE%84%E7%90%83/68096#2_2)
+
+
+

@@ -24,11 +24,11 @@ public class BowlingGame {
 
         for(int frame = 1;frame <= 10;frame++)
         {
-            if(this.rolls.get(roll) == 10) {
-                score += 10 + this.rolls.get(roll + 1) + this.rolls.get(roll + 2);
+            if(isStrike(roll)) {
+                score += 10 + getStrikeBonus(roll);
                 roll += 1;
             }else if(isSpare(roll)) {
-                score += 10 + this.rolls.get(roll+2);
+                score += 10 + getSpareBonus(roll);
                 roll += 2;
             } else {
                 score += getDefaultFrameScore(roll);
@@ -39,11 +39,25 @@ public class BowlingGame {
         return score;
     }
 
+
     private int getDefaultFrameScore(int roll) {
         return this.rolls.get(roll) + this.rolls.get(roll + 1);
     }
 
+    private int getStrikeBonus(int roll) {
+        return this.rolls.get(roll + 1) + this.rolls.get(roll + 2);
+    }
+
+    private int getSpareBonus(int roll) {
+        return this.rolls.get(roll+2);
+    }
+
     private boolean isSpare(int roll) {
         return getDefaultFrameScore(roll) == 10;
+    }
+
+
+    private boolean isStrike(int roll) {
+        return this.rolls.get(roll) == 10;
     }
 }

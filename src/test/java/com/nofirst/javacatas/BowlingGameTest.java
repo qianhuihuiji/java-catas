@@ -62,6 +62,17 @@ public class BowlingGameTest {
         assertThat(this.bowlingGame.score()).isEqualTo(28);
     }
 
+    /**
+     * 最后一个测试：满分局。这种情况的出现表明你连续获得了 10 次 strike，所以最终会得到 300 分：
+     */
+    @Test
+    public void it_scores_a_perfect_game()
+    {
+        rollTimes(12, 10);
+
+        assertThat(this.bowlingGame.score()).isEqualTo(300);
+    }
+
     private void rollSpare()
     {
         this.bowlingGame.roll(2);

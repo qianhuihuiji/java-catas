@@ -1,19 +1,22 @@
 package com.nofirst.javacatas;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrimeFactors {
-    public int[] generate(int i) {
-        if (i == 4) {
-            return new int[]{2, 2};
+    public int[] generate(int number) {
+        List<Integer> primes = new ArrayList<>();
+
+        while(number % 2 == 0){
+            primes.add(2);
+
+            number /= 2;
         }
 
-        if (i > 2) {
-            return new int[]{3};
+        if(number > 1){
+            primes.add(number);
         }
 
-        if (i > 1) {
-            return new int[]{2};
-        }
-
-        return new int[]{};
+        return primes.stream().mapToInt(Integer::intValue).toArray();
     }
 }

@@ -20,4 +20,10 @@ public class PrimeFactorsTest {
     {
         assertThat(this.primeFactors.generate(2)).isEqualTo(new int[]{2});
     }
+
+    @Test
+    public void it_returns_3_for_3()
+    {
+        assertThat(this.primeFactors.generate(3)).isEqualTo(new int[]{3});
+    }
 }

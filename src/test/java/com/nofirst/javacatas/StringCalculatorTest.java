@@ -46,6 +46,7 @@ public class StringCalculatorTest {
         });
         //3：接下来便可以对返回的异常进行一些其他的测试
         //比如对异常的信息进行断言测试
+        assertThat(exception.getMessage()).isEqualTo("Invalid number provided:-3");
     }
 
     @Test

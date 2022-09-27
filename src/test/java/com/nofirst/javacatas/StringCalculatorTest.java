@@ -20,4 +20,17 @@ public class StringCalculatorTest {
         assertThat(this.stringCalculator.add("5")).isEqualTo(5);
     }
 
+
+    @Test
+    public void it_finds_the_sum_of_two_numbers()
+    {
+        assertThat(this.stringCalculator.add("1,2")).isEqualTo(3);
+    }
+
+    @Test
+    public void it_finds_the_sum_of_any_numbers()
+    {
+        assertThat(this.stringCalculator.add("1,2,3,4,5")).isEqualTo(15);
+    }
+
 }

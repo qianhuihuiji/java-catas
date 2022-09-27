@@ -18,6 +18,10 @@ public class StringCalculator {
                  throw new InvalidParameterException();
              }
 
+             if (intVal > 100) {
+                 return 0;
+             }
+
              return intVal;
          }).mapToInt(Integer::intValue).sum();
     }

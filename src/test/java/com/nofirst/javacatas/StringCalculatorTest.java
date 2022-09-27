@@ -48,4 +48,10 @@ public class StringCalculatorTest {
         //比如对异常的信息进行断言测试
     }
 
+    @Test
+    public void it_ignores_any_number_that_is_one_thousand_or_greater()
+    {
+        assertThat(this.stringCalculator.add("1,2,1000")).isEqualTo(3);
+    }
+
 }

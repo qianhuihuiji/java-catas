@@ -9,7 +9,9 @@ public class StringCalculator {
             return 0;
         }
 
-        String[] strings = s.split(",");
+        String regex = "\s*,\s*";
+
+        String[] strings = s.split(regex);
 
      return   Stream.of(strings).map(t -> {
              int intVal = Integer.parseInt(t);

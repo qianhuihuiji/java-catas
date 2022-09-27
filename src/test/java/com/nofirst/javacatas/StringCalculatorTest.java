@@ -14,4 +14,10 @@ public class StringCalculatorTest {
         assertThat(this.stringCalculator.add("")).isEqualTo(0);
     }
 
+    @Test
+    public void it_finds_the_sum_of_one_number()
+    {
+        assertThat(this.stringCalculator.add("5")).isEqualTo(5);
+    }
+
 }

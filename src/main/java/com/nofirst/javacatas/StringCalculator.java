@@ -9,7 +9,7 @@ public class StringCalculator {
             return 0;
         }
 
-        String regex = "\s*,\s*";
+        String regex = "\s*(,|\n)\s*";
 
         String[] strings = s.split(regex);
 

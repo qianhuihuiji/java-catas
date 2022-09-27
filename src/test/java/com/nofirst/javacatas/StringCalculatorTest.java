@@ -54,11 +54,11 @@ public class StringCalculatorTest {
         assertThat(this.stringCalculator.add("1,2,1000")).isEqualTo(3);
     }
 
-//
-//    @Test
-//    public void it_allows_new_line_delimiters()
-//    {
-//        assertThat(this.stringCalculator.add("1,2\3")).isEqualTo(6);
-//    }
+
+    @Test
+    public void it_allows_new_line_delimiters()
+    {
+        assertThat(this.stringCalculator.add("1,2\n3")).isEqualTo(6);
+    }
 
 }

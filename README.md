@@ -34,5 +34,13 @@
 
 规则说明：[保龄球游戏](https://baike.baidu.com/item/%E4%BF%9D%E9%BE%84%E7%90%83/68096#2_2)
 
+- 字符串计算
+  
+首先我们定义几条规则：
 
+1. StringCalculator::add('') 的结果是 0；
+2. StringCalculator::add('1,2,3') 的结果是 6；
+3. 参数不能包含负数；
+4. StringCalculator::add('1,2,3,1000') 的结果是 6，即只计算100以内的，并且会过滤超出范围的数字；
+5. 允许用换行符 \n 进行分割；
 

@@ -26,6 +26,9 @@ public class TennisMatch {
         if (this.hasWinner()) {
             return "Win For " + this.leader().getName();
         }
+        if (this.hasTheAdvantage()) {
+            return "Advantage " + this.leader().getName();
+        }
 
         String result =  LOOKUP.get(this.playerOne.getPoints()) + "-";
         result += this.tied() ? "All" :  LOOKUP.get(this.playerTwo.getPoints());
@@ -33,13 +36,28 @@ public class TennisMatch {
         return result;
     }
 
+    private boolean hasTheAdvantage() {
+        return hasEnoughPointsToBeWon() && isLeadingByOne();
+    }
+
     private Player leader() {
         return this.playerOne.getPoints() > this.playerTwo.getPoints() ? playerOne : playerTwo;
     }
 
     private boolean hasWinner() {
-        return Math.max(this.playerOne.getPoints(), this.playerTwo.getPoints()) >= 4
-                && Math.abs(this.playerOne.getPoints() - this.playerTwo.getPoints()) >= 2;
+        return hasEnoughPointsToBeWon() && isLeadingAtLeastByTwo();
+    }
+
+    private boolean isLeadingAtLeastByTwo() {
+        return Math.abs(this.playerOne.getPoints() - this.playerTwo.getPoints()) >= 2;
+    }
+
+    private boolean isLeadingByOne() {
+        return Math.abs(this.playerOne.getPoints() - this.playerTwo.getPoints()) == 1;
+    }
+
+    private boolean hasEnoughPointsToBeWon() {
+        return Math.max(this.playerOne.getPoints(), this.playerTwo.getPoints()) >= 4;
     }
 
     private boolean tied() {

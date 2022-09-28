@@ -24,4 +24,10 @@ public class FizzBuzzTest {
     {
         assertThat(this.fizzBuzz.execute(3)).isEqualTo("fizz");
     }
+
+    @Test
+    public void it_translate_5_for_fizzbuzz()
+    {
+        assertThat(this.fizzBuzz.execute(5)).isEqualTo("buzz");
+    }
 }

@@ -48,3 +48,17 @@
 
 首先我们简单了解下规则：写一个程序按自然数的顺序打印数字，但是在遇到 3 的倍数时用 “fizz” 替代数字，5 的倍数用 “buzz” 代替，既是 3 的倍数又是 5 的倍数打印 “fizzbuzz”。
 
+- 网球得分
+  首先你需要花点时间熟悉一下 [网球计分](https://baike.baidu.com/item/%E7%BD%91%E7%90%83%E8%A7%84%E5%88%99#4) 的规则，然后我们简单记录一下：
+
+| 得分/比分 | 英文表示             |
+|-------|------------------|
+| 0     | Love             |
+| 1-0   | Fifteen-Love     |
+| 2-0   | Thirty-Love      |
+| 3-0   | Forty-Love       |
+| 4-0   | Winner           |
+| 4-3   | Advantage Player |
+| 4-4   | Deuce            |
+| 1-1   | Fifteen-All      |
+| 2-2   | Thirty-All       |

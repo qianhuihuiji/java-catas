@@ -73,4 +73,13 @@ public class TennisMatchTest {
 
         assertThat(this.tennisMatch.score()).isEqualTo("Advantage John");
     }
+
+    @Test
+    public void it_scores_a_3_3_game()
+    {
+        this.playerOne.earnPoints(3);
+        this.playerTwo.earnPoints(3);
+
+        assertThat(this.tennisMatch.score()).isEqualTo("Deuce");
+    }
 }

@@ -29,11 +29,18 @@ public class TennisMatch {
         if (this.hasTheAdvantage()) {
             return "Advantage " + this.leader().getName();
         }
+        if (this.isDeuce()) {
+            return "Deuce";
+        }
 
         String result =  LOOKUP.get(this.playerOne.getPoints()) + "-";
         result += this.tied() ? "All" :  LOOKUP.get(this.playerTwo.getPoints());
 
         return result;
+    }
+
+    private boolean isDeuce() {
+        return Math.addExact(this.playerOne.getPoints(), this.playerTwo.getPoints()) >= 6 && this.tied();
     }
 
     private boolean hasTheAdvantage() {

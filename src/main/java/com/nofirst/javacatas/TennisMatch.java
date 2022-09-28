@@ -24,8 +24,12 @@ public class TennisMatch {
 
     public String score() {
         String result =  LOOKUP.get(this.playerOne.getPoints()) + "-";
-        result += this.playerOne.getPoints().equals(this.playerTwo.getPoints()) ? "All" :  LOOKUP.get(this.playerTwo.getPoints());
+        result += this.tied() ? "All" :  LOOKUP.get(this.playerTwo.getPoints());
 
         return result;
+    }
+
+    private boolean tied() {
+        return this.playerOne.getPoints().equals(this.playerTwo.getPoints());
     }
 }

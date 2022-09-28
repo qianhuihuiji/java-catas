@@ -11,8 +11,14 @@ public class TennisMatch {
     }
 
     public String score() {
+        if (this.playerOne.getPoints() == 3 && this.playerTwo.getPoints() == 0) {
+            return "Forty-Love";
+        }
+        if (this.playerOne.getPoints() == 2 && this.playerTwo.getPoints() == 0) {
+            return "Thirty-Love";
+        }
         if (this.playerOne.getPoints() == 1 && this.playerTwo.getPoints() == 0) {
-            return "Fifteen-All";
+            return "Fifteen-Love";
         }
 
         return "Love-All";

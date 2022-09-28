@@ -31,7 +31,21 @@ public class TennisMatchTest {
     public void it_scores_a_1_0_game()
     {
         this.playerOne.earnPoints(1);
-        assertThat(this.tennisMatch.score()).isEqualTo("Fifteen-All");
+        assertThat(this.tennisMatch.score()).isEqualTo("Fifteen-Love");
+    }
+
+    @Test
+    public void it_scores_a_2_0_game()
+    {
+        this.playerOne.earnPoints(2);
+        assertThat(this.tennisMatch.score()).isEqualTo("Thirty-Love");
+    }
+
+    @Test
+    public void it_scores_a_3_0_game()
+    {
+        this.playerOne.earnPoints(3);
+        assertThat(this.tennisMatch.score()).isEqualTo("Forty-Love");
     }
 
 }

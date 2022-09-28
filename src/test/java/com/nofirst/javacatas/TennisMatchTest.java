@@ -14,8 +14,8 @@ public class TennisMatchTest {
 
     @BeforeEach
     public void setUp() {
-        this.playerOne = new Player("john", 0);
-        this.playerTwo = new Player("jane", 0);
+        this.playerOne = new Player("John", 0);
+        this.playerTwo = new Player("Jane", 0);
 
         this.tennisMatch = new TennisMatch(playerOne, playerTwo);
     }
@@ -47,4 +47,10 @@ public class TennisMatchTest {
         assertThat(this.tennisMatch.score()).isEqualTo("Forty-Love");
     }
 
+    @Test
+    public void it_scores_a_4_0_game()
+    {
+        this.playerOne.earnPoints(4);
+        assertThat(this.tennisMatch.score()).isEqualTo("Win For John");
+    }
 }

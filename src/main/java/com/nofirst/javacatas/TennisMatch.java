@@ -23,10 +23,19 @@ public class TennisMatch {
     }
 
     public String score() {
+        if (this.hasWinner()) {
+            return "Win For John";
+        }
+
         String result =  LOOKUP.get(this.playerOne.getPoints()) + "-";
         result += this.tied() ? "All" :  LOOKUP.get(this.playerTwo.getPoints());
 
         return result;
+    }
+
+    private boolean hasWinner() {
+        return Math.max(this.playerOne.getPoints(), this.playerTwo.getPoints()) >= 4
+                && Math.abs(this.playerOne.getPoints() - this.playerTwo.getPoints()) >= 2;
     }
 
     private boolean tied() {

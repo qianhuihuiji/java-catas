@@ -33,6 +33,10 @@ public class TennisMatch {
             return "Deuce";
         }
 
+        return this.generalScore();
+    }
+
+    private String generalScore() {
         String result =  LOOKUP.get(this.playerOne.getPoints()) + "-";
         result += this.tied() ? "All" :  LOOKUP.get(this.playerTwo.getPoints());
 

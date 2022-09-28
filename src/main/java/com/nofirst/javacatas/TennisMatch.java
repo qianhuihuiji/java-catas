@@ -1,6 +1,18 @@
 package com.nofirst.javacatas;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TennisMatch {
+
+    private static final Map<Integer, String> LOOKUP = new HashMap<>() {};
+
+    static {
+        LOOKUP.put(0, "Love");
+        LOOKUP.put(1, "Fifteen");
+        LOOKUP.put(2, "Thirty");
+        LOOKUP.put(3, "Forty");
+    }
 
     private Player playerOne;
     private Player playerTwo;
@@ -11,16 +23,8 @@ public class TennisMatch {
     }
 
     public String score() {
-        if (this.playerOne.getPoints() == 3 && this.playerTwo.getPoints() == 0) {
-            return "Forty-Love";
-        }
-        if (this.playerOne.getPoints() == 2 && this.playerTwo.getPoints() == 0) {
-            return "Thirty-Love";
-        }
-        if (this.playerOne.getPoints() == 1 && this.playerTwo.getPoints() == 0) {
-            return "Fifteen-Love";
-        }
-
-        return "Love-All";
+        return LOOKUP.get(this.playerOne.getPoints()) +
+                "-" +
+                LOOKUP.get(this.playerTwo.getPoints());
     }
 }

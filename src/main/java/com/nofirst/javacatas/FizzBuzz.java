@@ -2,6 +2,9 @@ package com.nofirst.javacatas;
 
 public class FizzBuzz {
     public String execute(int number) {
+        if (number % 15 == 0) {
+            return "fizzbuzz";
+        }
         if (number % 5 == 0) {
             return "buzz";
         }

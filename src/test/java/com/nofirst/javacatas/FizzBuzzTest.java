@@ -30,4 +30,34 @@ public class FizzBuzzTest {
     {
         assertThat(this.fizzBuzz.execute(5)).isEqualTo("buzz");
     }
+
+    @Test
+    public void it_translate_6_for_fizzbuzz()
+    {
+        assertThat(this.fizzBuzz.execute(6)).isEqualTo("fizz");
+    }
+
+    @Test
+    public void it_translate_10_for_fizzbuzz()
+    {
+        assertThat(this.fizzBuzz.execute(10)).isEqualTo("buzz");
+    }
+
+    @Test
+    public void it_translate_15_for_fizzbuzz()
+    {
+        assertThat(this.fizzBuzz.execute(15)).isEqualTo("fizzbuzz");
+    }
+
+    @Test
+    public void it_translate_123_for_fizzbuzz()
+    {
+        assertThat(this.fizzBuzz.execute(123)).isEqualTo("fizz");
+    }
+
+    @Test
+    public void it_translate_150_for_fizzbuzz()
+    {
+        assertThat(this.fizzBuzz.execute(150)).isEqualTo("fizzbuzz");
+    }
 }

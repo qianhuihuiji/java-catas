@@ -60,4 +60,10 @@ public class FizzBuzzTest {
     {
         assertThat(this.fizzBuzz.execute(150)).isEqualTo("fizzbuzz");
     }
+
+    @Test
+    public void it_translate_a_sequence_of_number_for_fizzbuzz()
+    {
+        assertThat(this.fizzBuzz.executeUpTo(10)).isEqualTo(new String[]{"1","2","fizz","4","buzz","fizz","7","8","fizz","buzz"});
+    }
 }

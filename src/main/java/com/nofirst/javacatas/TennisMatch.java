@@ -24,13 +24,17 @@ public class TennisMatch {
 
     public String score() {
         if (this.hasWinner()) {
-            return "Win For John";
+            return "Win For " + this.leader().getName();
         }
 
         String result =  LOOKUP.get(this.playerOne.getPoints()) + "-";
         result += this.tied() ? "All" :  LOOKUP.get(this.playerTwo.getPoints());
 
         return result;
+    }
+
+    private Player leader() {
+        return this.playerOne.getPoints() > this.playerTwo.getPoints() ? playerOne : playerTwo;
     }
 
     private boolean hasWinner() {

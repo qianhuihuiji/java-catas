@@ -52,5 +52,9 @@ public class TennisMatchTest {
     {
         this.playerOne.earnPoints(4);
         assertThat(this.tennisMatch.score()).isEqualTo("Win For John");
+
+        this.playerOne.earnPoints(0);
+        this.playerTwo.earnPoints(4);
+        assertThat(this.tennisMatch.score()).isEqualTo("Win For Jane");
     }
 }
